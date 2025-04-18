@@ -4,5 +4,10 @@ jobs:
   sample:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello, world!!"
-      - uses: actions/checkout@v4
+      - run: echo "::debug::This is a debug message."
+      - run: echo "::warning::This is a warning message."
+      - run: echo "::error::This is an error message."
+      - run: echo "::add-mask::This is a masked message."
+      - run: echo "::group::This is a group message."
+      - run: echo "::endgroup::"
+    #   - run: echo "::set-output name=time::$(date)"
