@@ -2,13 +2,27 @@ name: Manual
 on:
   workflow_dispatch:
     inputs:
-      greeting:
+      # greeting:
+      #   type: string
+      #   default: Hello
+      #   required: true
+      #   description: A cheerful word
+      environment-name:
         type: string
-        default: Hello
-        required: true
-        description: A cheerful word
+        default: test
+        required: false
+        description: TEnvironment name
 jobs:
-  run:
+  # run:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: echo "${{ inputs.greeting }}"
+  print:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment-name }}
+    env:
+      USERNAME: ${{ vars.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
     steps:
-      - run: echo "${{ inputs.greeting }}"
+      - run: echo "${ USERNAME }"
+      - run: echo "${ PASSWORD:0:1 } ${ PASSWORD#? }"
