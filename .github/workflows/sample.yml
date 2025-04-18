@@ -3,8 +3,7 @@ on: push
 jobs:
   sample:
     runs-on: ubuntu-latest
+    env:
+      PASSWORD: SuperSecretValue
     steps:
-      - run: |
-          echo "::group::Show environment variables"
-          printenv
-          echo "::endgroup::"
+      - run: echo "## Example Title :rocket:" >> "${GITHUB_STEP_SUMMARY}"
