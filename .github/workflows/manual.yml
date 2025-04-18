@@ -11,7 +11,7 @@ on:
         type: string
         default: test
         required: false
-        description: TEnvironment name
+        description: Environment name
 jobs:
   # run:
   #   runs-on: ubuntu-latest
