@@ -1,0 +1,9 @@
+name: Sample
+on: push
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    env:
+      PASSWORD: SuperSecretValue
+    steps:
+      - run: echo "## Example Title :rocket:" >> "${GITHUB_STEP_SUMMARY}"
